@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="weather-card">
+            <form class="fetch-weather">
+                <input type="search" class="search-city" placeholder="Search for a city" id="search">
+                <button type="submit" id="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="place-time">
+                <h6 class="place" id="cityInput">City</h6>
+                <div class="local-time">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h6 class="time" id="current-time"></h6>
+                </div>
+            </div>
+
+            <div class="weather">
+                <div class="weather-icon">
+                    <i class="fa-solid fa-temperature-three-quarters fa-3x"></i>
+                    <h6 class="real-weather" id="temp">Search</h6>
+                </div>
+                <!-- <span class="weather-type">Sunny</span> -->
+            </div>
+
+            <div class="wind-type">
+                <div class="wind">
+                    <div class="item-1">
+                        <i class="fa-sharp fa-solid fa-wind"></i> <span id="wind_speed">Wind Speed</span>
+                    </div>
+                    <div class="item-1">
+                        <i class="fa-solid fa-arrow-down"></i><span id="min_temp">Min Temperature</span>
+                    </div>
+                    <div class="item-1">
+                        <i class="fa-solid fa-arrow-up"></i><span id="max_temp">Max Temperature</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/6ebe1528a9.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
