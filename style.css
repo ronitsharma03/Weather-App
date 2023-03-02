@@ -55,6 +55,15 @@ span, .place, .time{
 .weather{
     text-align: center;
 }
+.weatherimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-img{
+    height: 90px;
+    width: 90px;
+}
 form{
     text-align: center;
 }
@@ -82,10 +91,13 @@ button:hover{
 
 div .wind-type{
     margin-top: 50px;
+    display: flex;
+    flex-direction: row;
 }
 .wind{
     display: flex;
     flex-direction: column;
+    margin-right: 120px;
 }
 .wind span{
     margin: 5px;
