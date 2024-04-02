@@ -13,9 +13,14 @@ const apiKey = "94c3a56393535f680509006b9b1b443a";
 
 const getWeather = ((cityName)=>{
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`)
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) { // If response is not ok, throw an error
+            throw new Error('City not found');
+        }
+        return response.json();
+    })
     .then((response) => {
-    //   console.log(response); 
+        // Your existing code to display the weather
         cityInput.innerHTML = cityName;
         temp.innerHTML = response.main.temp + "&#176 C";
         max_temp.innerHTML = response.main.temp_max + "&#176 C";
@@ -24,15 +29,21 @@ const getWeather = ((cityName)=>{
         description.innerHTML = response.weather[0].description;
         const iconCode = response.weather[0].icon;
         const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
-        let imageUrl = document.getElementById("weather-icon-type").src = iconUrl;
-        document.getElementById("weather-icon-type").setAttribute("src", ""+iconUrl);
-
-       
-
-
+        document.getElementById("weather-icon-type").src = iconUrl;
     })
     .catch(error => {
-      console.error(error);
+        // Handle the error
+        console.error(error);
+        // Display a user-friendly error message
+        alert('Error: ' + error.message);
+        // Optionally, clear the previous weather information or show a placeholder
+        cityInput.innerHTML = "City not found";
+        temp.innerHTML = "";
+        max_temp.innerHTML = "";
+        min_temp.innerHTML = "";
+        wind_speed.innerHTML = "";
+        description.innerHTML = "Please enter a valid city name.";
+        document.getElementById("weather-icon-type").src = ""; // Clear the weather icon
     });
 });
 
