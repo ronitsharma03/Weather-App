@@ -38,12 +38,6 @@ const getWeather = ((cityName)=>{
         alert('Error: ' + error.message);
         // Optionally, clear the previous weather information or show a placeholder
         cityInput.innerHTML = "City not found";
-        temp.innerHTML = "";
-        max_temp.innerHTML = "";
-        min_temp.innerHTML = "";
-        wind_speed.innerHTML = "";
-        description.innerHTML = "Please enter a valid city name.";
-        document.getElementById("weather-icon-type").src = ""; // Clear the weather icon
     });
 });
 
