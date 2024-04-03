@@ -38,6 +38,8 @@ const getWeather = ((cityName)=>{
         alert('Error: ' + error.message);
         // Optionally, clear the previous weather information or show a placeholder
         cityInput.innerHTML = "City not found";
+        temp.innerHTML = "Wrong inputs";
+        description.innerHTML = "Wrong inputs";
     });
 });
 
